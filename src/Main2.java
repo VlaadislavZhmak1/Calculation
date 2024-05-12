@@ -12,7 +12,7 @@ public class Main2 extends JFrame implements ActionListener {
     // Main method
     public static void main(String[] args) {
         // Creating a new JFrame
-        frame = new JFrame("Calculation");
+        frame = new JFrame("Geometric progression");
 
         // Creating labels and text fields for user input
         JLabel text1 = new JLabel("First number");
