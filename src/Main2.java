@@ -7,7 +7,10 @@ import java.awt.event.ActionListener;
 public class Main2 extends JFrame implements ActionListener {
     // Declaring JFrame and text fields as static so they can be accessed in the main method
     static JFrame frame;
-    static JTextField result1, result2, result3, result4;
+    static JTextField result1;
+    static JTextField result2;
+    static JTextField result3;
+    static JTextArea result4;
 
     // Main method
     public static void main(String[] args) {
@@ -31,8 +34,7 @@ public class Main2 extends JFrame implements ActionListener {
         result3.setEditable(true);
 
         // Text field for displaying results
-        result4 = new JTextField("", 15);
-        result4.setPreferredSize(new Dimension(200, 120));
+        result4 = new JTextArea(10,15);
         result4.setEditable(false);
 
         // Button for quitting the application
@@ -54,10 +56,12 @@ public class Main2 extends JFrame implements ActionListener {
                 Integer r = Integer.parseInt(result2.getText());
                 Integer n = Integer.parseInt(result3.getText());
 
+                StringBuilder result = new StringBuilder();
                 for (int i = 0; i < n; i++) {
-                    double an = x * Math.pow(r, i); // Formula for finding the nth term of the progression
-                    result4.setText("a" + (i + 1) + " = " + an); // Displaying the nth term of the progression
+                    Integer an = (int) (x * Math.pow(r, i)); // Formula for finding the nth term of the progression
+                    result.append("a").append(i + 1).append(" = ").append(an + "\n"); // Displaying the nth term of the progression
                 }
+                result4.setText(result.toString());
             }
         });
 
