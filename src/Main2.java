@@ -52,14 +52,14 @@ public class Main2 extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Calculation of progression terms
-                int x = Integer.parseInt(result1.getText());
-                int r = Integer.parseInt(result2.getText());
-                int n = Integer.parseInt(result3.getText());
+                Integer x = Integer.parseInt(result1.getText());
+                Integer r = Integer.parseInt(result2.getText());
+                Integer n = Integer.parseInt(result3.getText());
 
                 StringBuilder result = new StringBuilder();
                 for (int i = 0; i < n; i++) {
                     Integer an = (int) (x * Math.pow(r, i)); // Formula for finding the nth term of the progression
-                    result.append("a").append(i + 1).append(" = ").append(an).append("\n"); // Displaying the nth term of the progression
+                    result.append("a").append(i + 1).append(" = ").append(an + "\n"); // Displaying the nth term of the progression
                 }
                 result4.setText(result.toString());
             }
