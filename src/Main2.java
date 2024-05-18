@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 // The class declaration, extending JFrame and implementing ActionListener
 public class Main2 extends JFrame implements ActionListener {
-    // Declaring JFrame and text fields as static so they can be accessed in the main method
+    // Declaring JFrame and text fields as static s they can be accessed in the main method
     static JFrame frame;
     static JTextField result1;
     static JTextField result2;
@@ -52,14 +52,14 @@ public class Main2 extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Calculation of progression terms
-                Integer x = Integer.parseInt(result1.getText());
-                Integer r = Integer.parseInt(result2.getText());
-                Integer n = Integer.parseInt(result3.getText());
+                int x = Integer.parseInt(result1.getText());
+                int r = Integer.parseInt(result2.getText());
+                int n = Integer.parseInt(result3.getText());
 
                 StringBuilder result = new StringBuilder();
                 for (int i = 0; i < n; i++) {
                     Integer an = (int) (x * Math.pow(r, i)); // Formula for finding the nth term of the progression
-                    result.append("a").append(i + 1).append(" = ").append(an + "\n"); // Displaying the nth term of the progression
+                    result.append("a").append(i + 1).append(" = ").append(an).append("\n"); // Displaying the nth term of the progression
                 }
                 result4.setText(result.toString());
             }
